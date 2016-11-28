@@ -1,4 +1,7 @@
 header {
+	width: auto;
+	height: 50px;
+	background-color: yellow;
 	.form-setTown {
 		.form-setTown__content {
 			.form-setTown__content__select {
@@ -11,7 +14,16 @@ header {
 	}
 }
 main {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-content: center;
 	.past-temp_left-center {
+		order: -1;
+		flex-grow:2;
+		background-color:blue;
+		text-align: right;
 		.past-temp__date_center-top {
 			
 		}
@@ -26,6 +38,10 @@ main {
 		}
 	}
 	.now-temp_center {
+		order: 0;
+		flex-grow:3;
+		background-color:orange;
+		text-align: center;
 		.now-temp__date_center-top {
 
 		}
@@ -54,7 +70,10 @@ main {
 			}
 		}
 	}
-	.next-temp_left-center {
+	.next-temp_right-center {
+		order: 1;
+		flex-grow:2;
+		background-color:grey;
 		.next-temp__date_center-top {
 			
 		}
@@ -70,18 +89,33 @@ main {
 	}
 }
 footer {
+	background-color: yellow;
 	.delimiter {
 		img {
-
+			position: absolute;
+			margin: auto;
+			left: 0;
+			right: 0;
 		}
 	}
 	.calendarTemp {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: center;
 		.box-temp {
+			border: 1px solid black;
+			margin-left: 5px;
+			margin-right: 5px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			padding: 10px;
+			text-align: center;
 			.box-temp__date {
 
 			}
 			.box-temp__temp {
-				
+
 			}
 		}
 	}
