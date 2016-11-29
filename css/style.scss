@@ -1,4 +1,6 @@
 body {
+	background: url('../img/fon.jpg') no-repeat;
+	background-position: center;
 	display: flex;
 	flex-wrap: nowrap;
 	flex-direction: column;
@@ -6,9 +8,12 @@ body {
 	header {
 		flex: 1, auto;
 		width: auto;
-		background-color: yellow;
 		.form-setTown {
+			background-color:white;
 			padding: 10px;
+			width: 150px;
+			border-radius: 10px;
+			text-align: center;
 			.form-setTown__content {
 				.form-setTown__content__select {
 					
@@ -24,22 +29,29 @@ body {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
-		justify-content: center;
+		justify-content: space-around;
 		align-content: center;
+		align-items: flex-start;
 		margin-top: 5%;
 		margin-bottom: 5%;
 		.past-temp_left-center {
 			order: -1;
-			flex-grow:2;
-			background-color:blue;
-			text-align: right;
+			flex-basis: -webkit-max-content;
+			overflow: hidden;
+			background-color: rgba(255,255,255,0.7);
+			box-shadow: 0 0 10px 1px rgba(0,0,0,0.7);
+			text-align: center;
+			padding: 50px;
+			border-radius: 5px;
+			cursor: pointer;
 			.past-temp__date_center-top {
-				margin-top: 20%;
+				padding-top: 10px;
 			}
 			.past-temp__temperature_center {
-				margin-top: 10px;
-				margin-bottom: 10px;
+				font-weight: 600;
 				font-size: 32px;
+				padding-top: 10px;
+				padding-bottom: 10px;
 			}
 			.past-temp__state_bottom {
 				
@@ -48,17 +60,21 @@ body {
 				
 			}
 		}
+		.past-temp_left-center:hover {
+			background-color: rgba(255,255,255,1);
+		}
 		.now-temp_center {
 			order: 0;
-			flex-grow:3;
-			background-color:orange;
+			background-color: rgba(255,255,255,0.7);
+			box-shadow: 0 0 10px 1px rgba(0,0,0,0.7);
 			text-align: center;
+			border-radius: 5px;
+			padding: 10px;
 			.now-temp__date_center-top {
-				margin-top: 10px;
 			}
 			.now-temp__temperature_center {
-				margin-top: 10px;
-				margin-bottom: 10px;
+				font-weight: 600;
+				margin: 25px;
 				font-size: 32px;
 			}
 			.now-temp__state_center {
@@ -66,7 +82,7 @@ body {
 			}
 			.now-temp__details_center {
 				img {
-
+					height: 20px;
 				}
 			}
 			.now-temp__delimiter_center {
@@ -80,7 +96,6 @@ body {
 				flex-wrap: nowrap;
 				justify-content: center;
 				.times-temp {
-					border: 1px solid black;
 					padding: 5px;
 					margin: 5px;
 					.times-temp__time {
@@ -92,16 +107,24 @@ body {
 				}
 			}
 		}
+		.now-temp_center:hover {
+			background-color: rgba(255,255,255,1);
+		}
 		.next-temp_right-center {
 			order: 1;
-			flex-grow:2;
-			background-color:grey;
+			background-color: rgba(255,255,255,0.7);
+			box-shadow: 0 0 10px 1px rgba(0,0,0,0.7);
+			text-align: center;
+			padding: 50px;
+			border-radius: 10px;
+			cursor: pointer;
 			.next-temp__date_center-top {
-				margin-top: 20%;
+				padding-top: 10px;
 			}
 			.next-temp__temperature_center {
-				margin-top: 10px;
-				margin-bottom: 10px;
+				font-weight: 600;
+				padding-top: 10px;
+				padding-bottom: 10px;
 				font-size: 32px;
 			}
 			.next-temp__state_bottom {
@@ -111,13 +134,16 @@ body {
 				
 			}
 		}
+		.next-temp_right-center:hover {
+			background-color: rgba(255,255,255,1);
+		}
 	}
 	footer {
 		flex: 1, auto;
-		height: 100px;
 		.delimiter {
 			text-align: center;
 			img {
+				height: 30px;
 			}
 		}
 		.calendarTemp {
@@ -126,6 +152,9 @@ body {
 			flex-wrap: wrap;
 			justify-content: center;
 			.box-temp {
+				background: url('../img/fon-mini.jpg') no-repeat;
+				background-position: center;
+				opacity: 0.8;
 				order: 0;
 				flex: 0, auto;
 				border: 1px solid black;
@@ -135,12 +164,17 @@ body {
 				margin-bottom: 10px;
 				padding: 10px;
 				text-align: center;
+				cursor: pointer;
 				.box-temp__date {
-
+					font-weight: 300;
 				}
 				.box-temp__temp {
-
+					font-weight: 600;
+					font-size: 22px;
 				}
+			}
+			.box-temp:hover {
+				opacity: 1;
 			}
 		}
 	}
