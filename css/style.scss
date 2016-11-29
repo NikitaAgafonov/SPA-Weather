@@ -36,14 +36,13 @@ body {
 		margin-bottom: 5%;
 		.past-temp_left-center {
 			order: -1;
-			flex-basis: -webkit-max-content;
-			overflow: hidden;
 			background-color: rgba(255,255,255,0.7);
 			box-shadow: 0 0 10px 1px rgba(0,0,0,0.7);
 			text-align: center;
 			padding: 50px;
 			border-radius: 5px;
 			cursor: pointer;
+			overflow: hidden;
 			.past-temp__date_center-top {
 				padding-top: 10px;
 			}
