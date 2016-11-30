@@ -5,20 +5,25 @@ body {
 	flex-wrap: nowrap;
 	flex-direction: column;
 	justify-content: center;
+	font-family: 'Roboto', sans-serif;
 	header {
 		flex: 1, auto;
 		width: auto;
 		.form-setTown {
 			background-color:white;
-			padding: 10px;
-			width: 150px;
+			padding: 15px;
+			width: 250px;
 			border-radius: 10px;
 			text-align: center;
 			.form-setTown__content {
-				.form-setTown__content__select {
-					
+				.form-setTown__select {
+					margin-top:10px;
+					width: 150px;
+					height: 30px;
+					font-family: 'Roboto', sans-serif;
+					font-size: 20px;
 				}
-				.form-setTown__content__option {
+				.form-setTown__option {
 					
 				}
 			}
@@ -32,17 +37,18 @@ body {
 		justify-content: space-around;
 		align-content: center;
 		align-items: flex-start;
-		margin-top: 20px;
+		margin-top: 10px;
 		margin-bottom: 10px;
 		.past-temp_left-center {
 			order: -1;
-			background-color: rgba(255,255,255,0.7);
+			background: url('../img/snow.jpg') no-repeat;
+			background-position: center;
+			opacity: 0.7;
 			box-shadow: 0 0 10px 1px rgba(0,0,0,0.7);
 			text-align: center;
-			padding: 50px;
+			padding: 100px;
 			border-radius: 5px;
-			cursor: pointer;
-			overflow: hidden;
+			font-size: 24px;
 			.past-temp__date_center-top {
 				padding-top: 10px;
 			}
@@ -60,7 +66,7 @@ body {
 			}
 		}
 		.past-temp_left-center:hover {
-			background-color: rgba(255,255,255,1);
+			opacity: 1;
 		}
 		.now-temp_center {
 			order: 0;
@@ -68,7 +74,8 @@ body {
 			box-shadow: 0 0 10px 1px rgba(0,0,0,0.7);
 			text-align: center;
 			border-radius: 5px;
-			padding: 10px;
+			padding: 30px;
+			font-size: 24px;
 			.now-temp__date_center-top {
 			}
 			.now-temp__temperature_center {
@@ -111,11 +118,14 @@ body {
 		}
 		.next-temp_right-center {
 			order: 1;
-			background-color: rgba(255,255,255,0.7);
+			background: url('../img/rain.jpg') no-repeat;
+			background-position: center;
+			opacity: 0.7;
 			box-shadow: 0 0 10px 1px rgba(0,0,0,0.7);
 			text-align: center;
-			padding: 50px;
+			padding: 100px;
 			border-radius: 10px;
+			font-size: 24px;
 			cursor: pointer;
 			.next-temp__date_center-top {
 				padding-top: 10px;
@@ -134,7 +144,7 @@ body {
 			}
 		}
 		.next-temp_right-center:hover {
-			background-color: rgba(255,255,255,1);
+			opacity:1;
 		}
 	}
 	footer {
@@ -142,7 +152,8 @@ body {
 		.delimiter {
 			text-align: center;
 			img {
-				height: 30px;
+				height: 40px;
+				width: 500px;
 			}
 		}
 		.calendarTemp {
@@ -161,7 +172,7 @@ body {
 				margin-right: 5px;
 				margin-top: 10px;
 				margin-bottom: 10px;
-				padding: 10px;
+				padding: 30px;
 				text-align: center;
 				cursor: pointer;
 				.box-temp__date {
