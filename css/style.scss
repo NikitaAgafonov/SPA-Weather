@@ -6,16 +6,20 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	font-family: 'Roboto', sans-serif;
+}
 	header {
 		flex: 1, auto;
 		width: auto;
+	}
 		.form-setTown {
 			background-color:white;
 			padding: 15px;
 			width: 250px;
 			border-radius: 10px;
 			text-align: center;
+		}
 			.form-setTown__content {
+			}
 				.form-setTown__select {
 					margin-top:10px;
 					width: 150px;
@@ -23,12 +27,7 @@ body {
 					font-family: 'Roboto', sans-serif;
 					font-size: 20px;
 				}
-				.form-setTown__option {
-					
-				}
-			}
-		}
-	}
+				.form-setTown__option {}
 	main {
 		flex: 3, auto;
 		display: flex;
@@ -39,6 +38,7 @@ body {
 		align-items: flex-start;
 		margin-top: 10px;
 		margin-bottom: 10px;
+	}
 		.past-temp_left-center {
 			order: -1;
 			background: url('../img/snow.jpg') no-repeat;
@@ -49,6 +49,7 @@ body {
 			padding: 75px;
 			border-radius: 5px;
 			font-size: 24px;
+		}
 			.past-temp__date_center-top {
 				padding-top: 10px;
 			}
@@ -58,13 +59,9 @@ body {
 				padding-top: 10px;
 				padding-bottom: 10px;
 			}
-			.past-temp__state_bottom {
-				
-			}
-			.past-temp__arrowLeft {
-				
-			}
-		}
+			.past-temp__state_bottom {}
+			.past-temp__arrowLeft {}
+
 		.past-temp_left-center:hover {
 			opacity: 1;
 		}
@@ -76,16 +73,14 @@ body {
 			border-radius: 5px;
 			padding: 30px;
 			font-size: 24px;
-			.now-temp__date_center-top {
-			}
+		}
+			.now-temp__date_center-top {}
 			.now-temp__temperature_center {
 				font-weight: 600;
 				margin: 25px;
 				font-size: 32px;
 			}
-			.now-temp__state_center {
-
-			}
+			.now-temp__state_center {}
 			.now-temp__details_center {
 				img {
 					height: 20px;
@@ -101,18 +96,14 @@ body {
 				flex-direction: row;
 				flex-wrap: nowrap;
 				justify-content: center;
+			}
 				.times-temp {
 					padding: 5px;
 					margin: 5px;
-					.times-temp__time {
-
-					}
-					.times-temp__temp {
-
-					}
 				}
-			}
-		}
+					.times-temp__time {}
+					.times-temp__temp {}
+
 		.now-temp_center:hover {
 			background-color: rgba(255,255,255,1);
 		}
@@ -127,6 +118,7 @@ body {
 			border-radius: 10px;
 			font-size: 24px;
 			cursor: pointer;
+		}
 			.next-temp__date_center-top {
 				padding-top: 10px;
 			}
@@ -136,19 +128,17 @@ body {
 				padding-bottom: 10px;
 				font-size: 32px;
 			}
-			.next-temp__state_bottom {
-				
-			}
-			.next-temp__arrowRight {
-				
-			}
-		}
+			.next-temp__state_bottom {}
+			.next-temp__arrowRight {}
+
 		.next-temp_right-center:hover {
 			opacity:1;
 		}
-	}
+
+
 	footer {
 		flex: 1, auto;
+	}
 		.delimiter {
 			text-align: center;
 			img {
@@ -161,6 +151,7 @@ body {
 			flex-direction: row;
 			flex-wrap: wrap;
 			justify-content: center;
+		}
 			.box-temp {
 				background: url('../img/fon-mini.jpg') no-repeat;
 				background-position: center;
@@ -175,6 +166,7 @@ body {
 				padding: 30px;
 				text-align: center;
 				cursor: pointer;
+			}
 				.box-temp__date {
 					font-weight: 300;
 				}
@@ -182,10 +174,6 @@ body {
 					font-weight: 600;
 					font-size: 22px;
 				}
-			}
 			.box-temp:hover {
 				opacity: 1;
 			}
-		}
-	}
-}
