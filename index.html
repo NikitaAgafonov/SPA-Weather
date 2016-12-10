@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SPA Weather</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="scripts/main.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -13,15 +14,15 @@
 		<form class='form-setTown'>
 			<div class="form-setTown__content">Выберите город:<br>
 				<select name="town" class='form-setTown__select'>
-					<option value='Омск' class='form-setTown__option'>Омск</option>
-					<option value='Москва' class='form-setTown__option'>Москва</option>
-					<option value='Сочи' class='form-setTown__option'>Сочи</option>
+					<option value='Omsk' class='form-setTown__option'>Омск</option>
+					<option value='Moskow' class='form-setTown__option'>Москва</option>
+					<option value='Sochi' class='form-setTown__option'>Сочи</option>
 				</select>
 			</div>
 		</form>
 	</header>
 	<main>
-		<section class='past-temp_left-center'>
+		<section class='past-temp_left-center' >
 			<div class="past-temp__date_center-top">27 ноября</div>
 			<div class="past-temp__temperature_center">30°</div>
 			<div class="past-temp__state_bottom">Снег</div>
@@ -29,39 +30,48 @@
 				<img src='' class="past-temp__arrowLeft__image"></img>
 			</div>
 		</section>
-		<section class='now-temp_center'>
+		<section class='now-temp_center' >
 			<div class="now-temp__date_center-top">28 ноября</div>
 			<div class="now-temp__temperature_center">29°</div>
+			<div class="now-temp__icon_center"></div>
 			<div class="now-temp__state_center">Солнечно</div>
 			<div class="now-temp__details_center">
-				<img src="img/statistic.png" alt="statistics" />
-				<img src="img/forecast.png" alt="forecastData" />
+				<img src="img/statistic.png" alt="statistics" id='statistic' />
 			</div>
 			<div class="now-temp__delimiter_center">
 				<img src="img/line.png" alt='delimiter' />
 			</div>
 			<div class="now-temp__times-temp">
 				<div class="times-temp">
-					<div class="times-temp__time">13:00</div>
-					<div class="times-temp__temp">27°</div>
+					<div class="times-temp__time"></div>
+					<div class="times-temp__temp"></div>
 				</div>
 				<div class="times-temp">
-					<div class="times-temp__time">14:00</div>
-					<div class="times-temp__temp">28°</div>
+					<div class="times-temp__time"></div>
+					<div class="times-temp__temp"></div>
 				</div>
 				<div class="times-temp">
-					<div class="times-temp__time">15:00</div>
-					<div class="times-temp__temp">29°</div>
+					<div class="times-temp__time"></div>
+					<div class="times-temp__temp"></div>
 				</div>
 			</div>
 		</section>
-		<section class='next-temp_right-center'>
+		<section class='next-temp_right-center' >
 			<div class="next-temp__date_center-top">30 ноября</div>
 			<div class="next-temp__temperature_center">28°</div>
 			<div class="next-temp__state_bottom">Дождь</div>
 			<div class="next-temp__arrowRight">
 				<img src='' class="past-temp__arrowRight__image"></img>
 			</div>
+		</section>
+		<section class='statistic_full-width' hidden>
+			<a href="#" class="statistic__link-back">< Назад</a>
+			<div class="statistic__grnd-level">Атмосферное давление: <span id='grnd-level'></span> Па</div>
+			<div class="statistic__humidity">Влажность: <span id='humidity'></span> г/м³</div>
+			<div class="statistic__pressure">Давление: <span id='pressure'></span> Па</div>
+			<div class="statistic__sea-level">Уровень моря: <span id='sea-level'></span> м</div>
+			<div class="statistic__temp-max">Максимальная температура: <span id='temp-max'></span>°C</div>
+			<div class="statistic__temp-min">Минимальная температура: <span id='temp-min'></span>°C</div>
 		</section>
 	</main>
 	<footer>
@@ -72,22 +82,27 @@
 			<div class="box-temp">
 				<div class="box-temp__date">29 ноября</div>
 				<div class="box-temp__temp">28°</div>
+				<div class="box-temp__icon"></div>
 			</div>
 			<div class="box-temp">
 				<div class="box-temp__date">29 ноября</div>
 				<div class="box-temp__temp">28°</div>
+				<div class="box-temp__icon"></div>
 			</div>
 			<div class="box-temp">
 				<div class="box-temp__date">29 ноября</div>
 				<div class="box-temp__temp">28°</div>
+				<div class="box-temp__icon"></div>
 			</div>
 			<div class="box-temp">
 				<div class="box-temp__date">29 ноября</div>
 				<div class="box-temp__temp">28°</div>
+				<div class="box-temp__icon"></div>
 			</div>
 			<div class="box-temp">
 				<div class="box-temp__date">29 ноября</div>
 				<div class="box-temp__temp">28°</div>
+				<div class="box-temp__icon"></div>
 			</div>
 		</div>
 		<div class="delimiter">

@@ -85,6 +85,7 @@ body {
 			.now-temp__details_center {
 				img {
 					height: 20px;
+					cursor: pointer;
 				}
 			}
 			.now-temp__delimiter_center {
@@ -136,6 +137,16 @@ body {
 			opacity:1;
 		}
 
+		.statistic_full-width {
+			width: 100%;
+			background-color: rgba(255,255,255,1);
+			box-shadow: 0 0 10px 1px rgba(0,0,0,0.7);
+			border-radius: 5px;
+			text-align: center;
+			padding: 30px;
+			font-size: 24px;
+		}
+
 
 	footer {
 		flex: 1, auto;
@@ -165,6 +176,8 @@ body {
 				margin-top: 10px;
 				margin-bottom: 10px;
 				padding: 30px;
+				padding-top: 10px;
+				padding-bottom: 10px;
 				text-align: center;
 				cursor: pointer;
 			}
