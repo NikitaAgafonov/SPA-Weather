@@ -1,4 +1,4 @@
-@media screen and (max-device-width: 875px) {
+@media screen and (max-width: 875px) {
 	main {
 		flex-direction: column;
 	}
@@ -30,7 +30,7 @@
 		margin-bottom: 10px;
 	}
 }
-@media screen and (max-device-width: 500px) {
+@media screen and (max-width: 500px) {
 	header {
 		width: auto;
 		margin: auto;
