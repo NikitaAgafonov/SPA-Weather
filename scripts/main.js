@@ -102,6 +102,7 @@ function showNowTemp(day) {
 		showTimeTempTime = document.getElementsByClassName('times-temp__time'),
 		showTimeTempTemp = document.getElementsByClassName('times-temp__temp'),
 		statistic = document.getElementById('statistic'),
+		forecast = document.getElementById('forecast'),
 		date = getNameDate(day[0].dt_txt),
 		timeTempTemp,timeTempTime,temp,weather,icon;
 
@@ -157,6 +158,9 @@ function showNowTemp(day) {
 	showState.innerHTML = weather;
 	statistic.onclick = function () {
 		showStatistic(day);
+	};
+	forecast.onclick = function () {
+		showForecast(day);
 	};
 }
 
@@ -240,8 +244,34 @@ function showStatistic(day) {
 	document.getElementById('humidity').innerHTML = day[0].main.humidity;
 	document.getElementById('pressure').innerHTML = day[0].main.pressure;
 	document.getElementById('sea-level').innerHTML = day[0].main.sea_level;
+	document.getElementById('wind-speed').innerHTML = day[0].wind.speed;
 	document.getElementById('temp-max').innerHTML = Math.round(day[0].main.temp_max-273);
 	document.getElementById('temp-min').innerHTML = Math.round(day[0].main.temp_min-273);
+}
+
+function showForecast(day) {
+	console.log(day);
+	let pastTemp = document.getElementsByClassName('past-temp_left-center')[0],
+		nextTemp = document.getElementsByClassName('next-temp_right-center')[0],
+		nowTemp = document.getElementsByClassName('now-temp_center')[0],
+		forecast = document.getElementsByClassName('forecast_full-width')[0],
+		linkBack = document.getElementsByClassName('forecast__link-back')[0],
+		forecastTime = document.getElementsByClassName('forecast__time'),
+		forecastTemp = document.getElementsByClassName('forecast__temp');
+	pastTemp.hidden = true;
+	nowTemp.hidden = true;
+	nextTemp.hidden = true;
+	forecast.hidden = false;
+	linkBack.onclick = function () {
+		pastTemp.hidden = false;
+		nowTemp.hidden = false;
+		nextTemp.hidden = false;
+		forecast.hidden = true;
+	}
+	for (let i=0; i<day.length;i++) {
+		forecastTime[i].innerHTML = Math.round(new Date(day[i].dt_txt).getHours())+':00';
+		forecastTemp[i].innerHTML = Math.round(day[i].main.temp-273)+'°C';
+	}
 }
 
 function MainEvent() {

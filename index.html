@@ -37,6 +37,7 @@
 			<div class="now-temp__state_center">Солнечно</div>
 			<div class="now-temp__details_center">
 				<img src="img/statistic.png" alt="statistics" id='statistic' />
+				<img src="img/forecast.png" alt="forecast" id='forecast' />
 			</div>
 			<div class="now-temp__delimiter_center">
 				<img src="img/line.png" alt='delimiter' />
@@ -70,8 +71,32 @@
 			<div class="statistic__humidity">Влажность: <span id='humidity'></span> г/м³</div>
 			<div class="statistic__pressure">Давление: <span id='pressure'></span> Па</div>
 			<div class="statistic__sea-level">Уровень моря: <span id='sea-level'></span> м</div>
+			<div class="statistic__wind-speed">Скорость ветра: <span id='wind-speed'></span> м/с</div>
 			<div class="statistic__temp-max">Максимальная температура: <span id='temp-max'></span>°C</div>
 			<div class="statistic__temp-min">Минимальная температура: <span id='temp-min'></span>°C</div>
+		</section>
+		<section class='forecast_full-width' hidden>
+			<a href="#" class="forecast__link-back">< Назад</a>
+			<table class="forecast__table" align="center">
+				<tr>
+					<td class="forecast__time"></td>
+					<td class="forecast__time"></td>
+					<td class="forecast__time"></td>
+					<td class="forecast__time"></td>
+					<td class="forecast__time"></td>
+					<td class="forecast__time"></td>
+					<td class="forecast__time"></td>
+				</tr>
+				<tr>
+					<td class="forecast__temp"></td>
+					<td class="forecast__temp"></td>
+					<td class="forecast__temp"></td>
+					<td class="forecast__temp"></td>
+					<td class="forecast__temp"></td>
+					<td class="forecast__temp"></td>
+					<td class="forecast__temp"></td>
+				</tr>
+			</table>
 		</section>
 	</main>
 	<footer>
