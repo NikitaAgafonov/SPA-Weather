@@ -80,11 +80,15 @@ function showPastTemp(day) {
 			if (dayTime.getHours()===12) {
 				temp = Math.round(day[i].main.temp-273);
 				weather = day[i].weather[0].main;
+				icon = day[i].weather[0].icon;
 			};
 		};
 		if(!temp) temp = Math.round(day[0].main.temp-273);
 		if(!weather) weather = day[0].weather[0].main;
+		if(!icon) icon = day[0].weather[0].icon;
 		pastTemp.style.opacity = 1;
+		pastTemp.style.background = "url('./img/"+icon+"_min.jpg') no-repeat";
+		pastTemp.style.backgroundPosition = 'center';
 		showDate.innerHTML = date;
 		showTemp.innerHTML = temp+'°C';
 		showState.innerHTML = weather;
@@ -155,6 +159,9 @@ function showNowTemp(day) {
 	showDate.innerHTML = date;
 	showTemp.innerHTML = temp+'°C';
 	showIcon.innerHTML = '<img src="http://openweathermap.org/img/w/'+icon+'.png"></img>';
+	document.body.style.background = "url('./img/"+icon+".jpg') no-repeat";
+	document.body.style.backgroundPosition = "center";
+	
 	showState.innerHTML = weather;
 	statistic.onclick = function () {
 		showStatistic(day);
@@ -177,11 +184,15 @@ function showNextTemp(day) {
 			if (dayTime.getHours()===12) {
 				temp = Math.round(day[i].main.temp-273);
 				weather = day[i].weather[0].main;
+				icon = day[i].weather[0].icon;
 			};
 		};
 		if(!temp) temp = Math.round(day[0].main.temp-273);
 		if(!weather) weather = day[0].weather[0].main;
+		if(!icon) icon = day[0].weather[0].icon;
 		nextTemp.style.opacity = 1;
+		nextTemp.style.background = "url('./img/"+icon+"_min.jpg') no-repeat";
+		nextTemp.style.backgroundPosition = 'center';
 		showDate.innerHTML = date;
 		showTemp.innerHTML = temp+'°C';
 		showState.innerHTML = weather;
@@ -192,9 +203,13 @@ function showNextTemp(day) {
 }
 
 function showMainTemp(days) {
-	showPastTemp(days[0]);
-	showNowTemp(days[1]);
-	showNextTemp(days[2]);
+	$('main').animate({'opacity':'0'},600,function(){
+			showPastTemp(days[0]);
+			showNowTemp(days[1]);
+			showNextTemp(days[2]);
+			$(this).animate({'opacity':'1'},600);
+	});
+	
 }
 
 function showCalendarTemp(days) {
@@ -217,6 +232,8 @@ function showCalendarTemp(days) {
 		boxTempDate[i].innerHTML = getNameDate(days[i][0].dt_txt);
 		boxTempTemp[i].innerHTML = temp+'°C';
 		boxTempIcon[i].innerHTML = '<img src="http://openweathermap.org/img/w/'+icon+'.png"></img>';
+		boxTemp[i].style.background = "url('./img/"+icon+"_min.jpg') no-repeat";
+		boxTemp[i].style.backgroundPosition = 'center';
 		boxTemp[i].onclick = function () {
 			selectedDay = i;
 			showMainTemp(returnMainTemp(days, selectedDay));
@@ -234,11 +251,16 @@ function showStatistic(day) {
 	nowTemp.hidden = true;
 	nextTemp.hidden = true;
 	statistic.hidden = false;
+	$(statistic).animate({'width':document.documentElement.clientWidth+'px'},600);
 	linkBack.onclick = function () {
-		pastTemp.hidden = false;
-		nowTemp.hidden = false;
-		nextTemp.hidden = false;
-		statistic.hidden = true;
+		$(statistic).animate({'opacity':'0'},600,function () {
+			pastTemp.hidden = false;
+			nowTemp.hidden = false;
+			nextTemp.hidden = false;
+			statistic.hidden = true;
+			statistic.style.opacity = '1';
+			statistic.style.width = 'auto';
+		});
 	}
 	document.getElementById('grnd-level').innerHTML = day[0].main.grnd_level;
 	document.getElementById('humidity').innerHTML = day[0].main.humidity;
@@ -262,11 +284,16 @@ function showForecast(day) {
 	nowTemp.hidden = true;
 	nextTemp.hidden = true;
 	forecast.hidden = false;
+	$(forecast).animate({'width':document.documentElement.clientWidth+'px'},600);
 	linkBack.onclick = function () {
-		pastTemp.hidden = false;
-		nowTemp.hidden = false;
-		nextTemp.hidden = false;
-		forecast.hidden = true;
+		$(forecast).animate({'opacity':'0'},600,function () {
+			pastTemp.hidden = false;
+			nowTemp.hidden = false;
+			nextTemp.hidden = false;
+			forecast.hidden = true;
+			forecast.style.opacity = '1';
+			forecast.style.width = 'auto';
+		});
 	}
 	for (let i=0; i<day.length;i++) {
 		forecastTime[i].innerHTML = Math.round(new Date(day[i].dt_txt).getHours())+':00';
@@ -291,12 +318,6 @@ function MainEvent() {
 	pastDay.onclick = function () {
 		selectedDay--;
 		if (selectedDay < 0) selectedDay=0;
-		daysWatch = returnMainTemp(daysTemp,selectedDay);
-		showMainTemp(daysWatch);
-	}
-
-	nowDay.onclick = function () {
-		selectedDay;
 		daysWatch = returnMainTemp(daysTemp,selectedDay);
 		showMainTemp(daysWatch);
 	}
