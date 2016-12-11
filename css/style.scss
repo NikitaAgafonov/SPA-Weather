@@ -1,5 +1,5 @@
 body {
-	background: url('../img/01d.jpg') no-repeat;
+	//background: url('../img/01d.jpg') no-repeat;
 	background-position: center;
 	display: flex;
 	flex-wrap: nowrap;
@@ -42,6 +42,7 @@ body {
 		align-items: flex-start;
 		margin-top: 10px;
 		margin-bottom: 10px;
+		opacity: 0;
 	}
 		.past-temp_left-center {
 			order: -1;
