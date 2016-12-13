@@ -1,0 +1,29 @@
+<section class='past-temp_left-center' ng-click="selectPastDay()" style="opacity:{{pastDay.opacity}};background:{{pastDay.background}}">
+	<div class="past-temp__date_center-top" ng-bind="pastDay.date"></div>
+	<div class="past-temp__temperature_center" ng-bind="pastDay.temp"></div>
+	<div class="past-temp__state_bottom" ng-bind="pastDay.weather"></div>
+</section>
+<section class='now-temp_center' >
+	<div class="now-temp__date_center-top" ng-bind="nowDay.date"></div>
+	<div class="now-temp__temperature_center" ng-bind="nowDay.temp"></div>
+	<div class="now-temp__icon_center"> <img src="http://openweathermap.org/img/w/{{nowDay.icon}}.png"></img></div>
+	<div class="now-temp__state_center" ng-bind="nowDay.weather"></div>
+	<div class="now-temp__details_center">
+		<a ng-href="#!/stat"><img src="img/statistic.png" alt="statistics" id='statistic' /></a>
+		<a ng-href="#!/forecast"><img src="img/forecast.png" alt="forecast" id='forecast' /></a>
+	</div>
+	<div class="now-temp__delimiter_center">
+		<img src="img/line.png" alt='delimiter' />
+	</div>
+	<div class="now-temp__times-temp">
+		<div class="times-temp" ng-repeat="temp in nowDay.timeTemp">
+			<div class="times-temp__time" ng-bind="temp.time+':00'"></div>
+			<div class="times-temp__temp" ng-bind="temp.temp"></div>
+		</div>
+	</div>
+</section>
+<section class='next-temp_right-center' ng-click="selectNextDay()" style="opacity:{{nextDay.opacity}};background:{{nextDay.background}}">
+	<div class="next-temp__date_center-top" ng-bind="nextDay.date"></div>
+	<div class="next-temp__temperature_center" ng-bind="nextDay.temp"></div>
+	<div class="next-temp__state_bottom" ng-bind="nextDay.weather"></div>
+</section>

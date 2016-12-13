@@ -64,7 +64,7 @@ gulp.task('img', function () {
 			svgoPlugins: [{removeViewBox:false}],
 			use: [pngquant(),imageminJpegoptim()]
 		}))
-		.pipe(gulp.dest(config.buildImg))
+		.pipe(gulp.dest(config.img))
 });
 
 gulp.task('scriptLibs', function () {
@@ -105,13 +105,14 @@ gulp.task('watch', ['browser-sync', 'sass'], function () {
 	gulp.watch(config.babelES+'/**/*.js', ['babel']);
 	gulp.watch(config.project+'**/*.+(css|html|js)').on('change', browserSync.reload);
 	gulp.watch(config.bower, ['bower']);
+	gulp.watch(config.img, ['img']);
 });
 
 gulp.task('cleanProj', function () {
 	return del([config.buildProject+'**/*'])
 });
 
-gulp.task('build', ['cleanProj','img','sass', 'babel'], function () {
+gulp.task('build', ['cleanProj','sass', 'babel'], function () {
     return gulp.src(config.project+'*.html')
         .pipe(useref(config.project))
         .pipe(gulpif('*.js', uglify()))

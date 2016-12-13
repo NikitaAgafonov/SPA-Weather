@@ -39,7 +39,7 @@ body {
 		align-items: flex-start;
 		margin-top: 10px;
 		margin-bottom: 10px;
-		opacity: 0;
+		//opacity: 0;
 	}
 		.past-temp_left-center {
 			order: -1;
@@ -148,6 +148,14 @@ body {
 			border-radius: 5px;
 			text-align: center;
 			padding: 30px;
+			font-size: 24px;
+		}
+		.statistic__link-back {
+			padding: 10px;
+			font-size: 24px;
+		}
+		.forecast__link-back {
+			padding: 10px;
 			font-size: 24px;
 		}
 		.forecast_full-width {

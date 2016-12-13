@@ -1,0 +1,11 @@
+<section class='forecast_full-width' >
+	<button ng-click="back()" class="forecast__link-back">Назад</button>
+	<table class="forecast__table" align="center">
+		<tr>
+			<td ng-repeat="val in forecast" class="forecast__time">{{val.time}}</td>
+		</tr>
+		<tr>
+			<td ng-repeat="val in forecast" class="forecast__temp">{{val.temp}}</td>
+		</tr>
+	</table>
+</section>

@@ -57,8 +57,7 @@ main {
       -ms-flex-align: start;
           align-items: flex-start;
   margin-top: 10px;
-  margin-bottom: 10px;
-  opacity: 0; }
+  margin-bottom: 10px; }
 
 .past-temp_left-center {
   -webkit-box-ordinal-group: 0;
@@ -165,6 +164,14 @@ main {
   border-radius: 5px;
   text-align: center;
   padding: 30px;
+  font-size: 24px; }
+
+.statistic__link-back {
+  padding: 10px;
+  font-size: 24px; }
+
+.forecast__link-back {
+  padding: 10px;
   font-size: 24px; }
 
 .forecast_full-width {
