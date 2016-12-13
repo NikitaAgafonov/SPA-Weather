@@ -112,11 +112,13 @@ gulp.task('cleanProj', function () {
 	return del([config.buildProject+'**/*'])
 });
 
-gulp.task('build', ['cleanProj','sass', 'babel'], function () {
-    return gulp.src(config.project+'*.html')
+gulp.task('build', ['cleanProj', 'sass', 'babel'], function () {
+    gulp.src(config.project+'*.html')
         .pipe(useref(config.project))
         .pipe(gulpif('*.js', uglify()))
         .pipe(gulpif('*.css', autoprefixer()))
         .pipe(gulpif('*.css', cleanCSS()))
         .pipe(gulp.dest(config.buildProject));
+    gulp.src(config.img+'/**/*')
+    	.pipe(gulp.dest(config.buildImg));
 });
