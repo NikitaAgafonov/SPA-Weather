@@ -24,6 +24,7 @@ const gulp                 = require('gulp'),
 		img: 'src/img',
 		buildProject: 'build/',
 		buildImg: 'build/img',
+		buildJS: 'build/scripts',
 		sass: 'src/sass',
 		indexHTML: 'src/index.html',
 		styleCSS: 'src/css',
@@ -115,7 +116,7 @@ gulp.task('cleanProj', function () {
 gulp.task('build', ['cleanProj', 'sass', 'babel'], function () {
     gulp.src(config.project+'*.html')
         .pipe(useref(config.project))
-        .pipe(gulpif('*.js', uglify()))
+        //.pipe(gulpif('*.js', uglify()))
         .pipe(gulpif('*.css', autoprefixer()))
         .pipe(gulpif('*.css', cleanCSS()))
         .pipe(gulp.dest(config.buildProject));
